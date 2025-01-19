@@ -1,0 +1,9 @@
+<header class="header">
+    <h1>Logo</h1>
+    <h2>Ideas</h2>
+    <% if (loggedIn) { %>
+        <p>Logged in as <%= loggedIn %></p>
+    <% } else { %>
+        <p><a href="/login">Log in</a></p>
+    <% } %>
+</header>

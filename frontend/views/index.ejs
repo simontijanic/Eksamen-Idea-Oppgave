@@ -1,0 +1,12 @@
+<%- include('partials/head') %> 
+<%- include('partials/nav') %>
+
+<div class="container">
+  <% if (loggedIn) { %>
+  <h1><%= randomIdea.content %></h1>
+  <h3><%= userOfIdea.username %></h3>
+  <% } else { %>
+  <h2>You need to be logged in to see ideas</h2>
+  <% } %>
+</div>
+<%- include('partials/foot') %>

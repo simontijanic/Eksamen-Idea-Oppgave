@@ -1,0 +1,40 @@
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+
+<div class="container">
+    <h2>Signup Form</h2>
+    <form action="/signup" method="post" onsubmit="return validatePasswords()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+  
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirmPassword" required />
+  
+      <span id="error-message" style="color: red; display: none;">Passwords do not match.</span>
+  
+      <button type="submit">Signup</button>
+    </form>
+    <a href="/login">Log in instead</a>
+  </div>
+  
+  <script>
+    function validatePasswords() {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const errorMessage = document.getElementById('error-message');
+  
+      if (password !== confirmPassword) {
+        errorMessage.style.display = 'block';
+        return false; // Prevent form submission
+      }
+  
+      errorMessage.style.display = 'none';
+      return true; // Allow form submission
+    }
+  </script>
+  
+
+<%- include('partials/foot') %>
